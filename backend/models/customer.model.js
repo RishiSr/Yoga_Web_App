@@ -5,6 +5,7 @@ const Customer = function (customer) {
     this.gender = customer.gender;
     this.status = customer.status;
     this.reg_date = customer.reg_date;
+    this.batch = customer.batch;
 
 }
 

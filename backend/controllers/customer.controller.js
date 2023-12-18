@@ -14,6 +14,7 @@ exports.create = (req, res) => {
         gender: req.body.gender,
         status: req.body.status,
         reg_date: req.body.reg_date,
+        batch: req.body.batch,
     });
 
 
