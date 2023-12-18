@@ -63,7 +63,7 @@ const RegisterForm = () => {
 
     }
     return (
-        <div className='w-[50%] mx-auto text-lg flex flex-col gap-5  z-0 ' >
+        <div className='lg:w-[50%] mx-auto text-lg flex flex-col gap-5  z-0 ' >
 
             <p className='text-center uppercase'>
                 ADD New Customer
