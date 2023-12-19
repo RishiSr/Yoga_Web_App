@@ -9,7 +9,7 @@ Yoga web site where customers can register and get enrolled to the classes.
 https://yoga-app-assigment.onrender.com
 ## Documentation
 
-[Schema](https://drive.google.com/file/d/1ESCwwhU_0TYrBlwzRheWX81ysudaY-CD/view?usp=drive_link)
+[Schema and ER](https://drive.google.com/file/d/1ESCwwhU_0TYrBlwzRheWX81ysudaY-CD/view?usp=drive_link)
 
 [Link to Documentation](https://drive.google.com/file/d/1n_KCyEVsgHgkv5D8JxMTlUW0R5D9M5e4/view?usp=drive_link)
 
