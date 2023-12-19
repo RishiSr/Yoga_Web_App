@@ -20,11 +20,15 @@ const Payment = ({ setOpenDiv, id }) => {
             temp = { ...temp, amt: "Invalid Amount (Must be 500)" }
         }
 
-        if (temp.card || temp.amt) {
+        if (!(paymentForm?.batch?.length > 0)) {
+            temp = { ...temp, batch: "Choose the batch" }
+        }
+        if (temp.card || temp.amt || temp.batch) {
             setError({ ...temp })
         } else {
             axios.put(`${base_url}/api/customer/pay`, {
-                id: id
+                id: id,
+                batch: paymentForm.batch
             }).then((res) => {
 
                 setConfirm(true)
@@ -74,6 +78,31 @@ const Payment = ({ setOpenDiv, id }) => {
                     }} />
                     {error.amt && <p className='text-red-700 ml-2' >
                         {error.amt}
+                    </p>}
+                </div>
+                <div>
+                    <p>
+                        Enter preferred batch timings
+                    </p>
+                    <select className='border-2 bg-white rounded-lg border-black w-full py-2 px-2' type='text' onChange={(e) => {
+                        setPaymentForm({ ...paymentForm, batch: e.target.value })
+                    }} >
+                        <option value={""}>
+                            Choose
+                        </option>
+                        <option value={"6-7AM"}>
+                            6 AM - 7 AM
+                        </option>
+                        <option value={"7-8AM"}>
+                            7 AM - 8 AM
+                        </option> <option value={"8-9AM"}>
+                            8 AM - 9 AM
+                        </option> <option value={"5-6PM"}>
+                            5 PM - 6 PM
+                        </option>
+                    </select>
+                    {error.batch && <p className='text-red-700 ml-2' >
+                        {error.batch}
                     </p>}
                 </div>
                 <button className='bg-green-800  text-white w-full mt-2 rounded py-2 active:bg-green-900' onClick={() => completePayment()} >

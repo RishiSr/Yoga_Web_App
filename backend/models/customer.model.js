@@ -23,8 +23,8 @@ Customer.create = (customer, result) => {
 
 }
 
-Customer.updateById = (id, result) => {
-    sql.query("UPDATE customer SET status = ? where id=?", ["isPaid", id], (err, res) => {
+Customer.updateById = (id, batch, result) => {
+    sql.query("UPDATE customer SET status = ?, batch = ? where id=?", ["isPaid", batch, id], (err, res) => {
         if (err) {
             console.log("Error : ", err);
             result(err, null);

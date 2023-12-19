@@ -27,7 +27,7 @@ exports.create = (req, res) => {
 };
 
 exports.completePayment = (req, res) => {
-    Customer.updateById(req.body.id, (err, data) => {
+    Customer.updateById(req.body.id, req.body.batch, (err, data) => {
         if (err) {
             if (err.msg) {
                 resp(res, err, 404, "Entry not found");

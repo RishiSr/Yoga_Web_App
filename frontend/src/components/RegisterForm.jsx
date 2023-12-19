@@ -27,11 +27,9 @@ const RegisterForm = () => {
         if (!(form?.gender?.length > 0)) {
             temp = { ...temp, gender: "Choose the gender" }
         }
-        if (!(form?.batch?.length > 0)) {
-            temp = { ...temp, batch: "Choose the batch" }
-        }
 
-        if (temp.name || temp.age || temp.gender || temp.batch) {
+
+        if (temp.name || temp.age || temp.gender) {
             setError({ ...temp })
         } else {
             console.log((new Date()).toISOString().split('T')[0])
@@ -39,7 +37,8 @@ const RegisterForm = () => {
             axios.post(`${base_url}/api/customer/`, {
                 ...form,
                 reg_date: (new Date()).toISOString().split('T')[0],
-                status: "reg"
+                status: "reg",
+                batch: "-"
 
             }).then((res) => {
                 console.log(res)
@@ -112,31 +111,7 @@ const RegisterForm = () => {
                         {error.gender}
                     </p>}
                 </div>
-                <div>
-                    <p>
-                        Enter preferred batch timings
-                    </p>
-                    <select className='border-2 bg-white rounded-lg border-black w-full py-2 px-2' type='text' onChange={(e) => {
-                        setForm({ ...form, batch: e.target.value })
-                    }} >
-                        <option value={""}>
-                            Choose
-                        </option>
-                        <option value={"6-7AM"}>
-                            6 AM - 7 AM
-                        </option>
-                        <option value={"7-8AM"}>
-                            7 AM - 8 AM
-                        </option> <option value={"8-9AM"}>
-                            8 AM - 9 AM
-                        </option> <option value={"5-6PM"}>
-                            5 PM - 6 PM
-                        </option>
-                    </select>
-                    {error.batch && <p className='text-red-700 ml-2' >
-                        {error.batch}
-                    </p>}
-                </div>
+
                 <button className='bg-black text-white uppercase font-bold rounded-lg   py-2 flex flex-row justify-center ' onClick={() => submit()}>
                     {loading ? <Bars height="25"
                         width="100"
