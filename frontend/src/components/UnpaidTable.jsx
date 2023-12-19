@@ -70,7 +70,7 @@ const UnpaidTable = () => {
                     </>
                 }
                 {
-                    paymentBoxOpen.open && <div className='bg-white border-2 border-black rounded backdrop:bg-slate-400 z-40 p-2  absolute  transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 min-h-[18rem] w-[30rem]' >
+                    paymentBoxOpen.open && <div className='bg-white border-2 border-black rounded backdrop:bg-slate-400 z-40 p-2  absolute  transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 min-h-[18rem] w-[85vw] sm:w-[30rem]' >
                         <Payment setOpenDiv={setPaymentBoxOpen} id={paymentBoxOpen.id} />
                     </div>
                 }

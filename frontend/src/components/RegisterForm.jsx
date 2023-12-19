@@ -8,7 +8,7 @@ import { errorToast, successToast } from '../../utils/toastify';
 const RegisterForm = () => {
     const [form, setForm] = useState({});
     const [error, setError] = useState({});
-    const [openPaymentDiv, setOpenPaymentDiv] = useState(false)
+    const [openPaymentDiv, setOpenPaymentDiv] = useState({})
     const [loading, setLoading] = useState(false);
     const [id, setId] = useState()
     const submit = () => {
@@ -118,7 +118,7 @@ const RegisterForm = () => {
                         color="#ffffff" /> : " Register New Customer"}
                 </button>
             </>}
-            {openPaymentDiv.open && <div className='bg-white border-2 border-black rounded backdrop:bg-slate-400 z-40 p-2  mx-auto min-h-[18rem] w-[30rem]' >
+            {openPaymentDiv.open && <div className='bg-white border-2 border-black rounded backdrop:bg-slate-400 z-40 p-2  mx-auto min-h-[18rem] w-[85vw] sm:w-[30rem]' >
                 <Payment setOpenDiv={setOpenPaymentDiv} id={openPaymentDiv.id} />
             </div>}
         </div>
