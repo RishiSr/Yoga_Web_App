@@ -7,7 +7,7 @@ const Customer = function (customer) {
 
 
 }
-
+//adding the data to db
 Customer.create = (customer, result) => {
     sql.query("INSERT INTO customer SET ?", customer, (err, res) => {
         if (err) {
@@ -21,7 +21,7 @@ Customer.create = (customer, result) => {
     })
 
 }
-
+//updating the status and batch of any row
 Customer.updateById = (id, batch, result) => {
     sql.query("UPDATE customer SET status = ?, batch = ? where id=?", ["isPaid", batch, id], (err, res) => {
         if (err) {
@@ -35,6 +35,8 @@ Customer.updateById = (id, batch, result) => {
         }
     })
 }
+
+//to get all the customers
 Customer.getCustomers = (result) => {
     sql.query("SELECT * FROM customer where status = ?", "reg", (err, res) => {
         if (err) {

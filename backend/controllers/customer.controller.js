@@ -24,7 +24,7 @@ exports.create = (req, res) => {
     });
 
 };
-
+// to update the status to "isPaid"
 exports.completePayment = (req, res) => {
     Customer.updateById(req.body.id, req.body.batch, (err, data) => {
         if (err) {
@@ -40,7 +40,7 @@ exports.completePayment = (req, res) => {
 
 }
 
-
+//to get all the customers
 exports.getAllCustomers = (req, res) => {
     Customer.getCustomers((err, data) => {
         if (err) {
