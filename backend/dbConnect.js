@@ -9,8 +9,23 @@ const connection = mysql.createConnection({
 });
 
 
-connection.connect(error => {
+connection.connect((error) => {
     if (error) throw error;
+    let createCustomerTable = `create table if not exists customer(
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        age INT NOT NULL,
+        gender VARCHAR(255) NOT NULL,
+        status VARCHAR(255) NOT NULL,
+        batch  VARCHAR(255) NOT NULL,
+        reg_date DATE
+    )`;
+
+    connection.query(createCustomerTable, function (err, results, fields) {
+        if (err) {
+            console.log(err.message);
+        }
+    });
     console.log("Successfully connected to the database.");
 });
 
