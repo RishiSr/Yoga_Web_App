@@ -36,9 +36,7 @@ const RegisterForm = () => {
             setLoading(true)
             axios.post(`${base_url}/api/customer/`, {
                 ...form,
-                reg_date: (new Date()).toISOString().split('T')[0],
-                status: "reg",
-                batch: "-"
+                reg_date: (new Date()).toISOString().split('T')[0]
 
             }).then((res) => {
                 console.log(res)
