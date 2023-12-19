@@ -16,9 +16,9 @@ connection.connect((error) => {
         name VARCHAR(255) NOT NULL,
         age INT NOT NULL,
         gender VARCHAR(255) NOT NULL,
-        status VARCHAR(255) NOT NULL,
-        batch  VARCHAR(255) NOT NULL,
-        reg_date DATE
+        status VARCHAR(255) DEFAULT "reg",
+        batch  VARCHAR(255) DEFAULT "-",
+        reg_date DATE NOT NULL
     )`;
 
     connection.query(createCustomerTable, function (err, results, fields) {

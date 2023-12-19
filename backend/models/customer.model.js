@@ -3,9 +3,8 @@ const Customer = function (customer) {
     this.name = customer.name;
     this.age = customer.age;
     this.gender = customer.gender;
-    this.status = customer.status;
     this.reg_date = customer.reg_date;
-    this.batch = customer.batch;
+
 
 }
 
