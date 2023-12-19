@@ -82,7 +82,5 @@ For settings up mySql database ad connecting it with server (NodeJS)
 
 `DB_NAME`
 
-In 
-
 
 
