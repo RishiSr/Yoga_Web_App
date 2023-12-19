@@ -1,1 +1,1 @@
-export const base_url = import.meta.env.REACT_APP_BASE_URL || "http://localhost:3000"
+export const base_url = import.meta.env.VITE_BASE_URL || "http://localhost:3000"
